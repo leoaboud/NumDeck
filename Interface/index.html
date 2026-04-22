@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NumDeck</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Syne:wght@400;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header id="header">
+    <div class="logo">
+      <div class="logo-icon">⌨</div>
+      Num<span>Deck</span>
+    </div>
+
+    <div class="header-center">
+      <div class="device-status" id="deviceStatus">
+        <div class="status-dot"></div>
+        <span id="deviceLabel">Aguardando dispositivo…</span>
+      </div>
+
+      <div class="profile-selector" id="profileSelector" onclick="openProfileMenu()">
+        <span id="activeProfileLabel">Dev Mode</span>
+        <span class="chevron">▾</span>
+      </div>
+
+      <!-- Dropdown de perfis -->
+      <div class="profile-dropdown hidden" id="profileDropdown">
+        <div id="profileList"></div>
+        <div class="dropdown-divider"></div>
+        <div class="dropdown-item new-profile" onclick="promptNewProfile()">+ Novo Perfil</div>
+      </div>
+    </div>
+
+    <div class="header-actions">
+      <div class="btn-icon" title="Minimizar para bandeja" onclick="minimizeToTray()">–</div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main>
+
+    <!-- LEFT: NUMPAD DECK -->
+    <section class="deck-area">
+      <div class="section-label">// Layout do Teclado</div>
+
+      <div class="numpad-frame" id="numpadFrame">
+        <div class="frame-brand">exbom</div>
+
+        <div class="numpad-grid">
+
+          <!-- Row 1 -->
+          <div class="key" id="key-KP_NUMLOCK"     data-key="KP_NUMLOCK"  onclick="selectKey('KP_NUMLOCK')">
+            <span class="key-raw">NL</span>
+            <span class="key-icon">⏻</span>
+            <span class="key-label">Liga/Desl.</span>
+          </div>
+          <div class="key" id="key-KP_DIVIDE"      data-key="KP_DIVIDE"   onclick="selectKey('KP_DIVIDE')">
+            <span class="key-raw">/</span>
+            <span class="key-icon">⇄</span>
+            <span class="key-label">Alt. Modo</span>
+          </div>
+          <div class="key" id="key-KP_MULTIPLY"    data-key="KP_MULTIPLY" onclick="selectKey('KP_MULTIPLY')">
+            <span class="key-raw">*</span>
+            <span class="key-icon">⬆</span>
+            <span class="key-label">Git Commit</span>
+          </div>
+          <div class="key" id="key-KP_MINUS"       data-key="KP_MINUS"    onclick="selectKey('KP_MINUS')">
+            <span class="key-raw">-</span>
+            <span class="key-icon">📋</span>
+            <span class="key-label">Ctrl+V</span>
+          </div>
+
+          <!-- Row 2 -->
+          <div class="key" id="key-KP_7"           data-key="KP_7"        onclick="selectKey('KP_7')">
+            <span class="key-raw">7</span>
+            <span class="key-icon">⚡</span>
+            <span class="key-label">Terminal ADM</span>
+          </div>
+          <div class="key" id="key-KP_8"           data-key="KP_8"        onclick="selectKey('KP_8')">
+            <span class="key-raw">8</span>
+            <span class="key-icon">▶</span>
+            <span class="key-label">Run Code</span>
+          </div>
+          <div class="key" id="key-KP_9"           data-key="KP_9"        onclick="selectKey('KP_9')">
+            <span class="key-raw">9</span>
+            <span class="key-icon">🐳</span>
+            <span class="key-label">Docker</span>
+          </div>
+          <div class="key key-tall" id="key-KP_PLUS" data-key="KP_PLUS"   onclick="selectKey('KP_PLUS')">
+            <span class="key-raw">+</span>
+            <span class="key-icon">©</span>
+            <span class="key-label">Ctrl+C</span>
+          </div>
+
+          <!-- Row 3 -->
+          <div class="key" id="key-KP_4"           data-key="KP_4"        onclick="selectKey('KP_4')">
+            <span class="key-raw">4</span>
+            <span class="key-icon">♫</span>
+            <span class="key-label">Deezer</span>
+          </div>
+          <div class="key" id="key-KP_5"           data-key="KP_5"        onclick="selectKey('KP_5')">
+            <span class="key-raw">5</span>
+            <span class="key-icon">🌑</span>
+            <span class="key-label">Obsidian</span>
+          </div>
+          <div class="key" id="key-KP_6"           data-key="KP_6"        onclick="selectKey('KP_6')">
+            <span class="key-raw">6</span>
+            <span class="key-icon">🌐</span>
+            <span class="key-label">Edge</span>
+          </div>
+          <div class="key" id="key-KP_BACKSPACE"   data-key="KP_BACKSPACE" onclick="selectKey('KP_BACKSPACE')">
+            <span class="key-raw">⌫</span>
+            <span class="key-icon">📊</span>
+            <span class="key-label">Task Manager</span>
+          </div>
+
+          <!-- Row 4 -->
+          <div class="key" id="key-KP_1"           data-key="KP_1"        onclick="selectKey('KP_1')">
+            <span class="key-raw">1</span>
+            <span class="key-icon">{}</span>
+            <span class="key-label">VSCode</span>
+          </div>
+          <div class="key" id="key-KP_2"           data-key="KP_2"        onclick="selectKey('KP_2')">
+            <span class="key-raw">2</span>
+            <span class="key-icon">🔍</span>
+            <span class="key-label">Google</span>
+          </div>
+          <div class="key" id="key-KP_3"           data-key="KP_3"        onclick="selectKey('KP_3')">
+            <span class="key-raw">3</span>
+            <span class="key-icon">💬</span>
+            <span class="key-label">WhatsApp</span>
+          </div>
+          <div class="key key-tall" id="key-KP_ENTER" data-key="KP_ENTER" onclick="selectKey('KP_ENTER')">
+            <span class="key-raw">↵</span>
+            <span class="key-icon">⚙</span>
+            <span class="key-label">Meu App</span>
+          </div>
+
+          <!-- Row 5 -->
+          <div class="key key-wide" id="key-KP_0"  data-key="KP_0"        onclick="selectKey('KP_0')">
+            <span class="key-raw">0</span>
+            <span class="key-icon">⇥</span>
+            <span class="key-label">Alt+Tab</span>
+          </div>
+          <div class="key" id="key-KP_DOT"         data-key="KP_DOT"      onclick="selectKey('KP_DOT')">
+            <span class="key-raw">.</span>
+            <span class="key-icon">✂</span>
+            <span class="key-label">Print+Copy</span>
+          </div>
+
+        </div><!-- /numpad-grid -->
+      </div><!-- /numpad-frame -->
+
+      <!-- Log de atividade -->
+      <div class="log-container">
+        <div class="section-label">// Log de Atividade</div>
+        <div class="log-area" id="logArea">
+          <div class="log-empty">Nenhuma ação ainda…</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT: PAINEL DE CONFIGURAÇÃO -->
+    <aside class="config-panel" id="configPanel">
+
+      <div class="panel-header">
+        <div class="panel-title">
+          Configurar Tecla
+          <span class="panel-key-badge" id="panelKeyBadge">—</span>
+        </div>
+        <button class="btn-test" id="btnTest" onclick="testCurrentKey()" title="Testar ação">▶ Testar</button>
+      </div>
+
+      <div class="panel-body">
+
+        <!-- Nome -->
+        <div class="field-group">
+          <label class="field-label">Nome da Ação</label>
+          <input class="field-input" type="text" id="fieldName" placeholder="Ex: Abrir Terminal" />
+        </div>
+
+        <!-- Tipo -->
+        <div class="field-group">
+          <label class="field-label">Tipo de Ação</label>
+          <div class="type-grid">
+            <div class="type-btn" data-type="open_app"      onclick="setType(this)"><span class="type-icon">📂</span>Abrir App</div>
+            <div class="type-btn" data-type="open_url"      onclick="setType(this)"><span class="type-icon">🌐</span>Abrir URL</div>
+            <div class="type-btn" data-type="shortcut"      onclick="setType(this)"><span class="type-icon">⌨</span>Atalho</div>
+            <div class="type-btn" data-type="text"          onclick="setType(this)"><span class="type-icon">📝</span>Texto</div>
+            <div class="type-btn" data-type="terminal_admin" onclick="setType(this)"><span class="type-icon">⚡</span>Terminal ADM</div>
+            <div class="type-btn" data-type="screenshot"   onclick="setType(this)"><span class="type-icon">✂</span>Screenshot</div>
+          </div>
+        </div>
+
+        <!-- Valor / Caminho -->
+        <div class="field-group" id="fieldValueGroup">
+          <label class="field-label" id="fieldValueLabel">Caminho / Comando</label>
+          <input class="field-input" type="text" id="fieldValue" placeholder="Ex: C:\apps\app.exe" />
+          <span class="field-hint" id="fieldHint"></span>
+        </div>
+
+        <!-- Ícone -->
+        <div class="field-group">
+          <label class="field-label">Ícone</label>
+          <div class="icon-picker" id="iconPicker">
+            <span class="icon-opt" onclick="setIcon(this)">▶</span>
+            <span class="icon-opt" onclick="setIcon(this)">📂</span>
+            <span class="icon-opt" onclick="setIcon(this)">⚡</span>
+            <span class="icon-opt" onclick="setIcon(this)">🐳</span>
+            <span class="icon-opt" onclick="setIcon(this)">🔍</span>
+            <span class="icon-opt" onclick="setIcon(this)">💬</span>
+            <span class="icon-opt" onclick="setIcon(this)">♫</span>
+            <span class="icon-opt" onclick="setIcon(this)">⬆</span>
+            <span class="icon-opt" onclick="setIcon(this)">⚙</span>
+            <span class="icon-opt" onclick="setIcon(this)">⇄</span>
+            <span class="icon-opt" onclick="setIcon(this)">⏻</span>
+            <span class="icon-opt" onclick="setIcon(this)">✂</span>
+            <span class="icon-opt" onclick="setIcon(this)">📊</span>
+            <span class="icon-opt" onclick="setIcon(this)">🌑</span>
+            <span class="icon-opt" onclick="setIcon(this)">🌐</span>
+            <span class="icon-opt" onclick="setIcon(this)">📋</span>
+            <span class="icon-opt" onclick="setIcon(this)">©</span>
+            <span class="icon-opt" onclick="setIcon(this)">⇥</span>
+            <span class="icon-opt" onclick="setIcon(this)">{}</span>
+          </div>
+          <!-- Ícone customizado -->
+          <input class="field-input" type="text" id="fieldIcon" placeholder="Ou digite um emoji/texto…" maxlength="4" />
+        </div>
+
+        <!-- Cor -->
+        <div class="field-group">
+          <label class="field-label">Cor da Tecla</label>
+          <div class="color-row" id="colorPicker">
+            <div class="color-dot blue"   data-color="blue"   onclick="setColor(this)"></div>
+            <div class="color-dot green"  data-color="green"  onclick="setColor(this)"></div>
+            <div class="color-dot orange" data-color="orange" onclick="setColor(this)"></div>
+            <div class="color-dot purple" data-color="purple" onclick="setColor(this)"></div>
+            <div class="color-dot cyan"   data-color="cyan"   onclick="setColor(this)"></div>
+            <div class="color-dot red"    data-color="red"    onclick="setColor(this)"></div>
+            <div class="color-dot gray"   data-color="gray"   onclick="setColor(this)"></div>
+          </div>
+        </div>
+
+      </div><!-- /panel-body -->
+
+      <div class="panel-footer">
+        <button class="btn-clear" onclick="clearKey()">Limpar</button>
+        <button class="btn-save"  onclick="saveKey()">Salvar</button>
+      </div>
+
+    </aside>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-left">
+      <span class="footer-item">🔌 <span id="footerDevice">Exbom USB</span></span>
+      <span class="footer-item">⌨ <span>18 teclas</span></span>
+      <span class="footer-item">◈ <span id="footerProfile">Dev Mode</span></span>
+    </div>
+    <div class="footer-right">NumDeck v1.0</div>
+  </footer>
+
+  <!-- TOAST NOTIFICATIONS -->
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
