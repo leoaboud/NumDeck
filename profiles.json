@@ -1,0 +1,135 @@
+{
+  "active_profile": "Dev Mode",
+  "profiles": {
+    "Dev Mode": {
+      "KP_NUMLOCK": {
+        "name": "Liga/Desliga Deck",
+        "type": "toggle",
+        "value": "",
+        "icon": "⏻",
+        "color": "red"
+      },
+      "KP_DIVIDE": {
+        "name": "Alterna Modo",
+        "type": "profile_switch",
+        "value": "",
+        "icon": "⇄",
+        "color": "cyan"
+      },
+      "KP_MULTIPLY": {
+        "name": "Git Commit",
+        "type": "shortcut",
+        "value": "ctrl+alt+k",
+        "icon": "⬆",
+        "color": "orange",
+        "note": "Atalho do GitHub Desktop para commit"
+      },
+      "KP_MINUS": {
+        "name": "Ctrl+V",
+        "type": "shortcut",
+        "value": "ctrl+v",
+        "icon": "📋",
+        "color": "blue"
+      },
+      "KP_7": {
+        "name": "Terminal ADM",
+        "type": "terminal_admin",
+        "value": "",
+        "icon": "⚡",
+        "color": "purple"
+      },
+      "KP_8": {
+        "name": "Run Code",
+        "type": "shortcut",
+        "value": "f5",
+        "icon": "▶",
+        "color": "green",
+        "note": "Executa script ativo no VSCode (F5)"
+      },
+      "KP_9": {
+        "name": "Docker Desktop",
+        "type": "open_app",
+        "value": "C:\\Program Files\\Docker\\Docker\\Docker Desktop.exe",
+        "icon": "🐳",
+        "color": "blue"
+      },
+      "KP_PLUS": {
+        "name": "Ctrl+C",
+        "type": "shortcut",
+        "value": "ctrl+c",
+        "icon": "©",
+        "color": "green"
+      },
+      "KP_4": {
+        "name": "Deezer",
+        "type": "open_url",
+        "value": "https://www.deezer.com",
+        "icon": "♫",
+        "color": "orange"
+      },
+      "KP_5": {
+        "name": "Obsidian",
+        "type": "open_app",
+        "value": "%APPDATA%\\Obsidian\\Obsidian.exe",
+        "icon": "🌑",
+        "color": "purple"
+      },
+      "KP_6": {
+        "name": "Microsoft Edge",
+        "type": "open_app",
+        "value": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe",
+        "icon": "🌐",
+        "color": "blue"
+      },
+      "KP_BACKSPACE": {
+        "name": "Gerenciador Tarefas",
+        "type": "shortcut",
+        "value": "ctrl+shift+esc",
+        "icon": "📊",
+        "color": "red"
+      },
+      "KP_1": {
+        "name": "VSCode",
+        "type": "open_app",
+        "value": "code",
+        "icon": "{}",
+        "color": "blue"
+      },
+      "KP_2": {
+        "name": "Google",
+        "type": "open_url",
+        "value": "https://www.google.com",
+        "icon": "🔍",
+        "color": "cyan"
+      },
+      "KP_3": {
+        "name": "WhatsApp",
+        "type": "open_app",
+        "value": "%LOCALAPPDATA%\\WhatsApp\\WhatsApp.exe",
+        "icon": "💬",
+        "color": "green"
+      },
+      "KP_ENTER": {
+        "name": "Meu App",
+        "type": "open_app",
+        "value": "C:\\MeuApp\\meuapp.exe",
+        "icon": "⚙",
+        "color": "orange"
+      },
+      "KP_0": {
+        "name": "Alt+Tab",
+        "type": "shortcut",
+        "value": "alt+tab",
+        "icon": "⇥",
+        "color": "cyan"
+      },
+      "KP_DOT": {
+        "name": "Print+Copiar",
+        "type": "screenshot",
+        "value": "",
+        "icon": "✂",
+        "color": "red"
+      }
+    }
+  }
+}
