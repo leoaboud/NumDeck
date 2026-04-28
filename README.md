@@ -1,3 +1,4 @@
+<img width="1084" height="691" alt="Captura de tela 2026-04-21 222533" src="https://github.com/user-attachments/assets/d9768bf7-f3da-49e6-8b3f-bb55f6b09d33" />
 # ⌨️ NumDeck
 
 > Transforme qualquer teclado numérico USB em um deck de atalhos personalizado — sem hardware extra, sem Stream Deck, sem mensalidade.
